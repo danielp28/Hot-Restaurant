@@ -1,2 +1,3 @@
 # Hot-Restaurant
-A group project
+
+Daniel Masters, Thomas Rios, Larkin Ingram
