@@ -30,14 +30,10 @@ var tables = [
         phoneNumber: "9563512194",
         customerEmail: "jedgarza@gmail.com",
         customerID: "jett34"
-    },
-    {
-        customerName: "rubi",
-        phoneNumber: "6574843q",
-        customerEmail: "rubi6543",
-        customerID: "5"
     }
 ]
+
+var wait = [];
 
 // Routes
 // =============================================================
@@ -63,19 +59,19 @@ app.get("/api/tables", function (req, res) {
 
 
 // Displays a single character, or returns false
-app.get("/api/tables/:table", function(req, res) {
+app.get("/api/tables/:table", function (req, res) {
     var chosen = req.params.table;
-  
+
     console.log(chosen);
-  
+
     for (var i = 0; i < tables.length; i++) {
-      if (chosen === tables[i].customerName) {
-        return res.json(tables[i]);
-      }
+        if (chosen === tables[i].customerName) {
+            return res.json(tables[i]);
+        }
     }
-  
+
     return res.json(false);
-  });
+});
 
 // Create New Characters - takes in JSON input
 app.post("/api/tables", function (req, res) {
@@ -83,15 +79,18 @@ app.post("/api/tables", function (req, res) {
     // This works because of our body parsing middleware
     var newTable = req.body;
 
-    // Using a RegEx Pattern to remove spaces from newCharacter
-    // You can read more about RegEx Patterns later https://www.regexbuddy.com/regex.html
-    newTable.customerName = newTable.customerName.replace(/\s+/g, "").toLowerCase();
-
     console.log(newTable);
+    if (tables.length < 5) {
+        tables.push(newTable);
+        console.log("added");
+        res.json(newTable);
 
-    tables.push(newTable);
+    }
+    else {
+        wait.push(newTable);
+    }
 
-    res.json(newTable);
+    // res.json(newTable);
 });
 
 // Starts the server to begin listening
