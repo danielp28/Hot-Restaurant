@@ -7,21 +7,23 @@
   <!-- Latest compiled and minified CSS & JS -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="assets/css/style.css">
   <script src="https://code.jquery.com/jquery.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+  <link href="https://fonts.googleapis.com/css?family=Lexend+Deca&display=swap" rel="stylesheet">
 </head>
 
 <body>
 
   <div class="container">
     <div class="jumbotron">
-      <h1>Ratatouille</h1>
+      <img class="animated-gif" src="assets/images/Logo.gif">
       <h3>Make your reservation!</h3>
       <hr>
 
-      <a href="tables"><button class="btn btn-primary btn-lg"><span class="fa fa-eye"></span> View
-          Tables</button></a>
-      <!-- <button type="submit" class="btn btn-danger btn-lg" id="add-btn"><span class="fa fa-fire"></span> Make Reservation</button> -->
+      <a href="/"><button class="btn btn-primary btn-lg"><span class="fa fa-eye"></span> Home</button></a>
+      <a href="tables"><button class="btn btn-primary btn-lg"><span class="fa fa-fire"></span> View Tables</button></a>
+
     </div>
     <div class="row">
 
@@ -54,6 +56,7 @@
                 <input type="text" class="form-control" id="unique-id">
               </div>
 
+
             </form>
             <br>
             <div class="text-right">
@@ -62,8 +65,8 @@
             </div>
           </div>
         </div>
-        <a href="https://www.w3schools.com/html/">API Table Link | </a>
-        <a href="https://www.w3schools.com/html/">API Wait List</a>
+        <a href="/api/tables">API Table Link | </a>
+        <a href="/api/waitlist">API Wait List</a>
 
 
         <script type="text/javascript">
@@ -87,7 +90,6 @@
           })
 
         </script>
-
 </body>
 
 </html>
